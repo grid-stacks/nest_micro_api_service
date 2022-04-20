@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { OrderController } from './order.controller';
 import { ORDER_PACKAGE_NAME, ORDER_SERVICE_NAME } from './order.pb';
+import { AuthModule } from '../auth/auth.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { ORDER_PACKAGE_NAME, ORDER_SERVICE_NAME } from './order.pb';
         },
       },
     ]),
+    AuthModule,
   ],
   controllers: [OrderController],
 })
